@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <title>Achievements</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .image-gallery {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 150px;
+        }
+        .image-gallery img {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+          margin: 5px;
+        }
+      </style>
+</head>
+  
+<body>
+  <nav class="nav container">
+    <a href="#" class="nav__logo">
+        <img src="/assets/img/fevicon (1).jpeg" alt="logo"> RSTA
+    </a>
+    <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="/index.html" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+                <a href="/About.html" class="nav__link active-link">About Us</a>
+            </li>
+            <li class="nav__item">
+                <a href="/Pricing.html" class="nav__link active-link">Pricing</a>
+            </li>
+            <li class="nav__item">
+                <a href="/Achievement.html" class="nav__link ">Achievements</a>
+            </li>
+            <div class="nav__link">
+                <a href="https://forms.gle/uKSVHHchdrGcRnUV9" class="button nav__button">Register Now</a>
+            </div>
+            <li class="nav__item">
+                <a href="/Login.html" class="nav__link active-link">Admin Login</a>
+            </li>
+
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+        </div>
+    </div>
+    <!-- Toggle Button -->
+    <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-line"></i>
+    </div>
+</nav>
+           <h1 style="margin-left: 400px;margin-top: 50px; font-size: 100px; color: rgb(237, 247, 235);">Achievements</h1>
+    <div class="image-gallery" id="gallery"></div>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>

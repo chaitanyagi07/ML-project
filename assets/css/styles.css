@@ -902,7 +902,7 @@ img {
 
 /* For small devices */
 
-@media screen and (min-width:340px) {
+@media screen and (min-width:340px){
     .container {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -937,9 +937,10 @@ img {
 }
 
 
+
 /* For medium devices */
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:768px){
     .nav__menu {
         width: 50%;
     }
@@ -1072,7 +1073,7 @@ img {
     }
 }
 
-@media screen and (min-width:1150px) {
+@media screen and (min-width:1150px)  {
     .container {
         margin-left: auto;
         margin-right: auto;

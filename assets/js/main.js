@@ -113,7 +113,7 @@ const sendEmail = (e) => {
         }, 3000)
     } else {
         // serviceID - templateID - #form - publicKey
-        emailjs.sendForm('service_zus6pbg', 'template_evhvljc', '#contact-form', 'qcpqiS5OIqNJxeete')
+        emailjs.sendForm('service_t1m9k5t', 'template_nlhcsjg', '#contact-form', 'rCWh_Zf3HT_CcZ_wv')
             .then(() => {
                 // Show message and add color
                 contactMessage.classList.add('color-green')
@@ -129,8 +129,7 @@ const sendEmail = (e) => {
             })
 
         // To clear the input field
-        contactUser.value = ''
-
+        contactUser.value = ''    
     }
 }
 contactForm.addEventListener('submit', sendEmail)

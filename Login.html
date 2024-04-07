@@ -13,21 +13,22 @@
         <form id="login-form">
             <h2>Login</h2>
             <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" autocomplete="off" required>
+                <input type="text" id="username" name="username" placeholder='Username' required/>
             </div>
             <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" autocomplete="off" required>
+                <input type="password" id="password" name="password" required placeholder='Password'/>
             </div>
-            <button type="submit">Login</button>
+            <button className='b1' type="submit"
+                    style="color: rgb(34, 34, 33);
+                     background-color: rgb(199, 191, 191); 
+                     border-radius: 5px;
+                      height: 40px;
+                      width: 110px;
+                      margin-top: 30px;">Login</button>
             <p id="error-message"></p>
         </form>
     </div>
     <script src="/Admin/Login.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script> -->
 </body>
 
 </html>
