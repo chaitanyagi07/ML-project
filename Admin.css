@@ -1,8 +1,16 @@
 *{
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
+  
+  
 }
-
+body {
+  background-image: url('./images (2).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(68, 65, 65);
+}
 .inp {
   display: none;
 }

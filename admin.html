@@ -11,17 +11,24 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
     <link rel="stylesheet" href="/Admin.css">
     <style>
-        body {
-            background-image: url('./images (2).png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #fdfafa;
+        /* CSS for the delete button */
+        .deleteButton {
+            background-color: red;
+            color: rgb(126, 115, 115);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .deleteButton:hover {
+            background-color: darkred;
         }
     </style>
+
 </head>
 
-<body>
+<body style="overflow-y: auto;">
     <div class="content" style="display: columns; justify-content: center;">
         <div class="imageUpload">
             <input type="file" class="inp" onchange="getImageData(event)" />
@@ -38,7 +45,17 @@
             <a href="/index.html"> <button class="but"> Visit website</button> </a>
         </div>
     </div>
-  
+    <div class="imageList" style="margin-left: 140px; 
+            margin-top: -250px; 
+            max-height: 400px; /* Adjust height as needed */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            object-fit: cover;">
+        <h2>List of Images</h2>
+        <ul id="imageList"></ul>
+    </div>
+
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyCDBKDkemkAv5zu500sh7djz0b747P80oE",
@@ -49,10 +66,52 @@
             appId: "1:95340766105:client:6c4a3d6a9b90eb7e296908",
             measurementId: "G-V2XSEQY36M"
         };
-
+     
+         
         const app = firebase.initializeApp(firebaseConfig);
 
         const storage = firebase.storage();
+        const imageList = document.getElementById("imageList");
+
+
+        const displayImages = () => {
+            const storageRef = storage.ref().child("myimages");
+            storageRef.listAll().then((result) => {
+                result.items.forEach((imageRef) => {
+                    imageRef.getDownloadURL().then((url) => {
+                        // Create list item for each image
+                        const listItem = document.createElement("li");
+                        const image = document.createElement("img");
+                        const deleteButton = document.createElement("button");
+                        image.src = url;
+                        image.width = 100; // Adjust width as needed
+                        listItem.appendChild(image);
+                        listItem.appendChild(deleteButton);
+                        imageList.appendChild(listItem);
+
+                        // Set delete button properties
+                        deleteButton.textContent = "Delete";
+                        deleteButton.addEventListener("click", () => {
+                            deleteImage(imageRef.name);
+                            listItem.remove(); // Remove list item from DOM after deletion
+                        });
+                    }).catch((error) => {
+                        console.error("Error getting download URL: ", error);
+                    });
+                });
+            }).catch((error) => {
+                console.error("Error listing images: ", error);
+            });
+        };
+
+        const deleteImage = (imageName) => {
+            const imageRef = storage.ref().child("myimages/" + imageName);
+            imageRef.delete().then(() => {
+                console.log("Image deleted successfully");
+            }).catch((error) => {
+                console.error("Error deleting image: ", error);
+            });
+        };
 
         const inp = document.querySelector(".inp");
         const progressbar = document.querySelector(".progress");
@@ -114,7 +173,10 @@
                 }
             );
         };
-
+        
+        window.onload = () => {
+            displayImages();
+        };
         const redirecttoclientsite = () => {
             window.location.href = '/index.html';
         }
