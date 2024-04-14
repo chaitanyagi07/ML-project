@@ -756,6 +756,7 @@ img {
 .footer__logo,
 .footer__description {
     color: var(--title-color);
+
 }
 
 .footer__logo,
@@ -772,7 +773,7 @@ img {
 }
 
 .footer__logo img {
-    width: 1.5rem;
+    width: 5rem;
 }
 
 .footer__description {
