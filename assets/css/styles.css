@@ -106,7 +106,7 @@ img {
 
 .container {
     max-width: 1124px;
-    margin-right: 1.5rem;
+    margin-right: 4rem;
     margin-left: 1.5rem;
 }
 
@@ -199,7 +199,7 @@ img {
 }
 
 .nav__logo img {
-    width: 1.25rem;
+    width: 5rem;
 }
 
 .nav__toggle {
@@ -294,9 +294,8 @@ img {
 }
 
 .home__subtitle {
-    font-size: var(--bigger-font-size);
+    font-size: var(--biggest-font-size);
     -webkit-text-stroke: 1px var(--title-color);
-    color: transparent;
 }
 
 .home__title {
@@ -934,6 +933,17 @@ img {
     .footer__content {
         grid-template-columns: 1;
     }
+    .nav {
+        height: calc(var(--header-height)+2rem);
+    }
+    .nav__menu {
+        width: 50%;
+    }
+    .nav__toggle
+     {
+        margin-right: 200px;
+    }
+    
 }
 
 
@@ -1006,12 +1016,13 @@ img {
     .nav__toggle,
     .nav__close {
         display: none;
+        margin-right: 10px;
     }
     .nav__list {
         flex-direction: row;
         padding: 0;
         align-items: center;
-        column-gap: 4rem;
+        column-gap: 3rem;
     }
     .section {
         padding: 7rem 0 0;
